@@ -1,0 +1,308 @@
+/* Author: Afaq Butt 
+   Theme: Award-Winning Full Stack Portfolio (STABLE VERSION)
+*/
+
+:root {
+    --bg-dark: #0a0a0c;
+    --card-bg: #141418;
+    --accent: #6366f1;        /* Primary Indigo */
+    --accent-secondary: #a855f7; 
+    --text-main: #f3f4f6;
+    --text-dim: #9ca3af;
+    --border: rgba(255, 255, 255, 0.08);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Global Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header & Nav --- */
+.main-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 12, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 2000;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand { font-size: 1.5rem; font-weight: 800; }
+.brand span { color: var(--accent); }
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu li { margin-left: 2rem; }
+.menu a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 500;
+    transition: var(--transition);
+}
+.menu a:hover { color: var(--accent); }
+
+.nav-cta {
+    background: var(--accent);
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+}
+
+/* --- Hero Section --- */
+.hero-wrapper {
+    padding: 100px 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1.2;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.greeting {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
+    margin: 1.5rem 0;
+    font-weight: 800;
+}
+
+h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-main);
+}
+
+.hero-inner p {
+    max-width: 500px;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+}
+
+/* Hero Image */
+.hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.image-border {
+    width: 320px;
+    height: 420px;
+    border-radius: 24px;
+    padding: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: borderGlow 3s infinite alternate;
+}
+
+.image-border img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* --- Contact Section (The Fix is here!) --- */
+.contact-section {
+    padding: 120px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-section h2 { margin-bottom: 1.5rem; }
+.contact-section p { margin-bottom: 2rem; color: var(--text-dim); }
+
+.primary-btn {
+    display: inline-block; /* Essential for alignment */
+    background: var(--accent);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
+    background: #5558e6;
+}
+
+.secondary-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1px solid #333;
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.secondary-btn:hover { background: #1a1a1e; }
+
+/* --- Grid & Cards --- */
+.grid-skills, .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 40px 0;
+}
+
+.card, .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-10px); }
+.card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+
+/* --- Mobile Menu & Responsive --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3000;
+}
+
+@media (max-width: 968px) {
+    .hero-inner { flex-direction: column-reverse; text-align: center; }
+    .hero-text { display: flex; flex-direction: column; align-items: center; }
+    .menu-toggle { display: block; }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.5s;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        border-left: 1px solid var(--border);
+    }
+
+    .menu.active { right: 0; }
+    .menu li { margin: 1.5rem 0; margin-left: 0; }
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes borderGlow {
+    from { box-shadow: 0 0 15px rgba(99, 102, 241, 0.2); }
+    to { box-shadow: 0 0 35px rgba(168, 85, 247, 0.4); }
+}
+/* --- Pro Image Styling with Cinematic Hover --- */
+.hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    z-index: 10; /* Ensure it stays above background elements */
+}
+
+.image-border {
+    position: relative;
+    width: 340px;
+    height: 440px;
+    border-radius: 24px;
+    padding: 8px; /* Gap for the gradient border */
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: borderGlow 3s infinite alternate;
+    transition: var(--transition); /* Smooth transition for the border itself */
+    overflow: hidden; /* Keeps image inside border radius */
+}
+
+/* Base state of the image: Cinematic Grayscale */
+.image-border img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px; /* Slightly smaller than parent border-radius */
+    filter: grayscale(100%) brightness(0.9); /* Full cinematic grayscale */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                filter 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Super smooth transition */
+}
+
+/* Pyaari Hover Animation: Color comes back and subtle zoom */
+.image-border:hover img {
+    filter: grayscale(0%) brightness(1); /* Color comes back */
+    transform: scale(1.05); /* Gentle zoom in */
+}
+
+/* Subtle glow increase on border hover */
+.image-border:hover {
+    box-shadow: 0 30px 60px rgba(99, 102, 241, 0.3);
+}
