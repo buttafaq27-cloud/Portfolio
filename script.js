@@ -1,7 +1,3 @@
-/* Author: Afaq Butt
-   Description: Premium Portfolio Interactions with Mobile Menu Fix
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- MOBILE MENU LOGIC (New Addition) ---
@@ -67,3 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("%cCrafted by Afaq Butt", "color: #6366f1; font-size: 20px; font-weight: bold;");
 });
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+if(menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+}
