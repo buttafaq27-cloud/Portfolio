@@ -305,4 +305,29 @@ h1 span {
 /* Subtle glow increase on border hover */
 .image-border:hover {
     box-shadow: 0 30px 60px rgba(99, 102, 241, 0.3);
+
+}
+/* Footer Social Icons Original Colors */
+
+/* LinkedIn Original Blue */
+.fa-linkedin, .fa-linkedin-in {
+    color: #0077B5 !important;
+    transition: transform 0.3s ease;
+}
+
+/* GitHub Original Black/White (Design ke hisaab se) */
+.fa-github {
+    color: #ffffff !important; /* Aapka theme dark hai isliye white rakha hai */
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect - Icons thore bare honge jab mouse le jayenge */
+.fa-linkedin:hover, .fa-github:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Agar icons ke sath koi link hai toh uski underline khatam karne ke liye */
+footer a {
+    text-decoration: none !important;
 }
