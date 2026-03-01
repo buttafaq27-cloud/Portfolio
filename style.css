@@ -1,7 +1,7 @@
 :root {
     --bg-dark: #0a0a0c;
     --card-bg: #141418;
-    --accent: #6366f1;        /* Primary Indigo */
+    --accent: #6366f1;       
     --accent-secondary: #a855f7; 
     --text-main: #f3f4f6;
     --text-dim: #9ca3af;
@@ -9,7 +9,6 @@
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Global Setup --- */
 * {
     margin: 0;
     padding: 0;
@@ -277,8 +276,8 @@ h1 span {
     background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     animation: borderGlow 3s infinite alternate;
-    transition: var(--transition); /* Smooth transition for the border itself */
-    overflow: hidden; /* Keeps image inside border radius */
+    transition: var(--transition); 
+    overflow: hidden; 
 }
 
 /* Base state of the image: Cinematic Grayscale */
@@ -286,16 +285,15 @@ h1 span {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 18px; /* Slightly smaller than parent border-radius */
-    filter: grayscale(100%) brightness(0.9); /* Full cinematic grayscale */
+    border-radius: 18px; 
+    filter: grayscale(100%) brightness(0.9);
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
                 filter 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Super smooth transition */
 }
 
-/* Pyaari Hover Animation: Color comes back and subtle zoom */
 .image-border:hover img {
-    filter: grayscale(0%) brightness(1); /* Color comes back */
-    transform: scale(1.05); /* Gentle zoom in */
+    filter: grayscale(0%) brightness(1); 
+    transform: scale(1.05); 
 }
 
 /* Subtle glow increase on border hover */
@@ -312,7 +310,7 @@ h1 span {
 
 /* GitHub Original Black/White (Design ke hisaab se) */
 .fa-github {
-    color: #ffffff !important; /* Aapka theme dark hai isliye white rakha hai */
+    color: #ffffff !important; 
     transition: transform 0.3s ease;
 }
 
@@ -335,10 +333,10 @@ footer a {
 }
 
 @media (max-width: 968px) {
-    .menu-toggle { display: block !important; } /* Mobile par 3 lines dikhengi */
+    .menu-toggle { display: block !important; } 
 
     .menu {
-        display: none; /* Default menu chupa hoga */
+        display: none; 
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -349,8 +347,8 @@ footer a {
         border-bottom: 1px solid var(--border);
     }
 
-    /* Jab click ho toh menu niche aaye */
     .menu.active {
         display: flex !important;
     }
 }
+
