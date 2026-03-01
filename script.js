@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- MOBILE MENU LOGIC (New Addition) ---
-    const menuIcon = document.querySelector('.menu-icon'); // 3 lines wala icon
-    const menu = document.querySelector('.menu');         // Aapki links wali list
+    const menuIcon = document.querySelector('.menu-icon'); 
+    const menu = document.querySelector('.menu');        
     const navLinksList = document.querySelectorAll('.menu a');
 
     if (menuIcon && menu) {
         menuIcon.addEventListener('click', () => {
-            menu.classList.toggle('active'); // Click karne par menu khulega/band hoga
+            menu.classList.toggle('active'); 
         });
 
-        // Link par click karte hi menu khud band ho jaye (Smooth experience)
         navLinksList.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.remove('active');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- YOUR ORIGINAL CODE (Animations & Scroll) ---
     const observerOptions = {
         threshold: 0.1
     };
@@ -63,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("%cCrafted by Afaq Butt", "color: #6366f1; font-size: 20px; font-weight: bold;");
 });
-// Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 
@@ -72,3 +69,4 @@ if(menuToggle) {
         menu.classList.toggle('active');
     });
 }
+
