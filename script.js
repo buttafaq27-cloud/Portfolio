@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- MOBILE MENU LOGIC (New Addition) ---
     const menuIcon = document.querySelector('.menu-icon'); 
     const menu = document.querySelector('.menu');        
     const navLinksList = document.querySelectorAll('.menu a');
@@ -69,4 +68,5 @@ if(menuToggle) {
         menu.classList.toggle('active');
     });
 }
+
 
